@@ -1,0 +1,203 @@
+.story-container {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  overflow-x: hidden;
+}
+
+.font-serif-italic {
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.text-reveal {
+  overflow: hidden;
+}
+
+/* Ethos Hero */
+.ethos-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 52px;
+  position: relative;
+}
+
+.bg-year {
+  position: absolute;
+  right: 5%;
+  bottom: 0px;
+  font-size: 30vw;
+  line-height: 0.8;
+  font-family: var(--font-display);
+  color: rgba(250, 250, 248, 0.03);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Stats Summary */
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(250, 250, 248, 0.1);
+  border-bottom: 1px solid rgba(250, 250, 248, 0.1);
+  padding: 80px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  border-right: 1px solid rgba(250, 250, 248, 0.05);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 84px;
+  color: var(--color-white);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.stat-label {
+  font-family: var(--font-jost);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-white-muted);
+  text-transform: uppercase;
+}
+
+.stat-subtext {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-top: 8px;
+}
+
+/* Timeline Section */
+.timeline-section {
+  padding: 120px 52px;
+}
+
+.chapter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.chapter-image-container {
+  aspect-ratio: 4/5;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #111;
+}
+
+.chapter-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapter-card:hover .chapter-image {
+  transform: scale(1.05);
+}
+
+.chapter-badge {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  border: 1px solid var(--color-gold);
+  padding: 4px 12px;
+  font-family: var(--font-jost);
+  font-size: 10px;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+}
+
+.chapter-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: rgba(250, 250, 248, 0.1);
+  line-height: 1;
+}
+
+.chapter-label {
+  font-family: var(--font-jost);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+/* Destinations */
+.destinations-section {
+  padding: 120px 0;
+  border-top: 1px solid rgba(250, 250, 248, 0.1);
+}
+
+.dest-scroll {
+  display: flex;
+  gap: 40px;
+  padding: 0 52px 60px;
+  overflow-x: auto;
+}
+
+.dest-card {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dest-image {
+  aspect-ratio: 16/10;
+  width: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+.dest-card:hover .dest-image {
+  filter: brightness(1.2);
+}
+
+.dest-title {
+  font-family: var(--font-jost);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-white-muted);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(250, 250, 248, 0.1);
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ethos-hero {
+    padding: 0 24px;
+  }
+  .timeline-section {
+    padding: 80px 24px;
+  }
+  .dest-scroll {
+    padding: 0 24px 40px;
+  }
+}

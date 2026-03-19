@@ -1,78 +1,144 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import BookingSidebar from './BookingSidebar';
+
+const journeyCards = [
+  { id: 'JP', city: 'Tokyo', price: '₹82,000', active: true },
+  { id: 'IT', city: 'Amalfi', price: '₹1,14,000', active: false },
+  { id: 'MV', city: 'Maldives', price: '₹68,000', active: false },
+  { id: 'PE', city: 'Machu Picchu', price: '₹96,000', active: false },
+];
+
+const features = [
+  {
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+      </svg>
+    ),
+    title: "INTIMATE SCALE",
+    description: "Max 8 guests per expedition, always."
+  },
+  {
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2L2 12L12 22L22 12L12 2Z" />
+      </svg>
+    ),
+    title: "ZERO TRACE",
+    description: "Carbon-neutral operations since 2018."
+  },
+  {
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" />
+      </svg>
+    ),
+    title: "EXPERT GUIDES",
+    description: "Naturalists, scientists & storytellers."
+  },
+  {
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+      </svg>
+    ),
+    title: "BESPOKE DESIGN",
+    description: "Every journey tailored to your vision."
+  }
+];
 
 const Philosophy = () => {
+  const [selectedDestination, setSelectedDestination] = React.useState('JP');
+
   return (
-    <section id="philosophy" className="bg-dark-philosophy py-[80px] px-8 md:px-[52px] overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-        
-        {/* Left Column: Text Content */}
+    <section id="philosophy" className="bg-[#0A0A0B] min-h-screen flex flex-col lg:flex-row relative">
+      {/* Left Content Area */}
+      <div className="flex-1 py-20 px-8 md:px-[52px] lg:pr-12">
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 1 }}
+           className="max-w-4xl"
         >
-          <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-4">
-            Our Philosophy
-          </p>
-          <h2 className="font-display text-white text-[52px] leading-[1.1] mb-6">
-            The Art of <br />
-            <span className="italic text-mint">Silence</span>
-          </h2>
-          <div className="w-12 h-[2px] bg-gold mb-8" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-[1px] bg-gold" />
+            <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase">
+              BOOK YOUR JOURNEY
+            </p>
+          </div>
           
-          <div className="space-y-6 max-w-lg mb-12">
-            <p className="font-body text-white/75 text-lg leading-relaxed">
-              In a world saturated with noise, we curate journeys into silence. Each expedition is meticulously designed to strip away the unnecessary and reconnect you with the raw, untamed beauty of our planet.
-            </p>
-            <p className="font-body text-white/75 text-lg leading-relaxed">
-              Our guides are local storytellers, naturalists, and adventurers who reveal hidden trails, secret vantage points, and moments that no itinerary can capture. This is travel as it was meant to be — intimate, exclusive, and transformative.
+          <h2 className="font-display text-white text-[clamp(44px,7vw,100px)] leading-[1] mb-12">
+            Travel as an <br />
+            <span className="italic text-mint font-normal">Art Form</span>
+          </h2>
+          
+          <div className="max-w-xl space-y-6 mb-20 text-white/35 font-body text-lg leading-relaxed">
+            <p>
+              We believe the most transformative journeys are not found on itineraries — they are felt in the silent spaces between destinations.
             </p>
           </div>
 
-          <div className="w-full h-[1px] bg-gold/30 mb-12" />
+          {/* Journey Selector Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24" role="radiogroup" aria-label="Select destination">
+            {journeyCards.map((card) => (
+              <div 
+                key={card.id}
+                role="radio"
+                aria-checked={selectedDestination === card.id}
+                tabIndex={0}
+                onClick={() => setSelectedDestination(card.id)}
+                onKeyDown={(e) => e.key === 'Enter' && setSelectedDestination(card.id)}
+                className={`p-6 rounded-xl border transition-all duration-700 cursor-pointer group
+                  ${selectedDestination === card.id 
+                    ? 'bg-mint/10 border-mint/30 shadow-[0_0_30px_rgba(45,212,191,0.1)]' 
+                    : 'bg-[#111112] border-white/5 hover:border-white/20'}`}
+                aria-label={`Select ${card.city} destination`}
+              >
+                <h4 className={`text-2xl font-display mb-1 transition-colors ${selectedDestination === card.id ? 'text-white' : 'text-white/40'}`}>
+                  {card.id}
+                </h4>
+                <p className={`text-sm font-jost uppercase tracking-widest mb-4 ${selectedDestination === card.id ? 'text-mint' : 'text-white/20'}`}>
+                  {card.city}
+                </p>
+                <p className={`text-[10px] font-jost uppercase tracking-widest ${selectedDestination === card.id ? 'text-white/60' : 'text-white/10'}`}>
+                  From {card.price}
+                </p>
+              </div>
+            ))}
+          </div>
 
-          {/* Stats Row */}
-          <div className="grid grid-cols-3 gap-8">
-            <StatItem number="12" suffix="+" label="Destinations" />
-            <StatItem number="98" suffix="%" label="Return Rate" />
-            <StatItem number="8" label="Max Group Size" />
+          {/* Features Grid at Bottom Left */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+            {features.map((feature, index) => (
+              <div key={feature.title} className="flex flex-col gap-4">
+                <div className="text-gold/60">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="font-body text-white/25 text-base leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
+      </div>
 
-        {/* Right Column: Photo Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-[4/5] overflow-hidden"
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900" 
-            alt="Forest path" 
-            className="w-full h-full object-cover"
-          />
-          {/* Subtle frame effect */}
-          <div className="absolute inset-0 border border-white/5 pointer-events-none" />
-        </motion.div>
-
+      {/* Right Sidebar Area */}
+      <div className="w-full lg:w-[450px] shrink-0">
+        <div className="sticky top-0 h-screen">
+          <BookingSidebar selectedDestination={selectedDestination} />
+        </div>
       </div>
     </section>
   );
 };
-
-const StatItem = ({ number, suffix, label }) => (
-  <div>
-    <div className="flex items-baseline font-body text-gold text-5xl leading-none">
-      <span>{number}</span>
-      {suffix && <span className="text-[0.6em] ml-1">{suffix}</span>}
-    </div>
-    <p className="font-jost text-[11px] tracking-nav uppercase text-white/45 mt-3">
-      {label}
-    </p>
-  </div>
-);
 
 export default Philosophy;

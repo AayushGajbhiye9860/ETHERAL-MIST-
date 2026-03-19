@@ -54,7 +54,7 @@ body::after {
   }
   
   .btn-gold::before {
-    @apply content-[''] absolute inset-0 bg-gold scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] -z-10;
+    @apply content-[''] absolute inset-0 bg-gold scale-x-0 origin-left transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] -z-10;
   }
   
   .btn-gold:hover::before {
@@ -70,10 +70,26 @@ body::after {
   }
 
   .nav-link::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300;
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-700;
   }
 
-  .nav-link:hover::after {
+  .nav-link.active::after {
     @apply w-full;
+  }
+  
+  .nav-link.active {
+    @apply text-white;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .bg-dark-lighter {
+    background-color: #0F1722;
   }
 }
