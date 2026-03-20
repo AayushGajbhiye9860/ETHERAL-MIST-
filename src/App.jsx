@@ -13,6 +13,7 @@ import BookingPage from './components/BookingPage'
 import JourneysPage from './pages/JourneysPage'
 import StoryPage from './pages/StoryPage'
 import ContactPage from './pages/ContactPage'
+import GalleryPage from './pages/GalleryPage'
 
 const Home = () => (
   <>
@@ -28,7 +29,7 @@ const Home = () => (
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen bg-dark">
+      <div className="relative min-h-screen bg-bg">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -37,6 +38,7 @@ function App() {
           <Route path="/journeys" element={<JourneysPage />} />
           <Route path="/story" element={<StoryPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
         <Footer />
       </div>
