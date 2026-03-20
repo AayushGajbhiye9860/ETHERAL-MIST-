@@ -1,0 +1,448 @@
+  ETHEREAL MIST · DESIGN SYSTEM  
+Forest & Gold
+Theme Specification
+A complete reference for colours, typography, spacing, components and CSS variables for the Ethereal Mist luxury travel website. Apply these values to transform the theme to Forest & Gold with Fraunces headings.
+Theme Name
+Forest & Gold
+Heading Font
+Fraunces (Google Fonts)
+Body Font
+Jost (Google Fonts)
+Mood
+Earthy · Luxury · Editorial · Organic
+Best For
+Eco-travel, Nature expeditions, High-end outdoors
+Version
+1.0 — Ethereal Mist
+01 · COLOUR PALETTE
+Every colour below maps to a CSS variable. Use these exact hex values throughout the site.
+BACKGROUND COLOURS
+ 
+#F2F5F0
+--bg
+Page background
+ 
+#E8EEE5
+--bg2
+Section backgrounds
+ 
+#D8E0D3
+--bg3
+Subtle dividers
+TEXT COLOURS
+ 
+#081008
+--text
+Primary text
+ 
+#102018
+--text2
+Secondary text
+ 
+#486848
+--text3
+Muted / captions
+ACCENT COLOURS (FOREST GREEN)
+ 
+#1A4020
+--accent
+Primary accent
+ 
+#0A2810
+--accent2
+Hover / darker accent
+ 
+#E8EEE5
+--alight
+Light accent tint
+GOLD COLOURS
+ 
+#C09818
+--gold
+Primary gold
+ 
+#D4AE40
+--gold2
+Lighter gold / stars
+ 
+#F8F4DC
+--gold-bg
+Gold tint background
+BORDER & CARD COLOURS
+ 
+#C8D8C8
+--border
+Default border
+ 
+#A8B8A8
+--border2
+Emphasis border
+ 
+#F8FFF5
+--card
+Card / widget bg
+ALL CSS VARIABLES — COPY & PASTE
+Add this block inside your :root {} in the CSS file:
+:root {
+  /* ── BACKGROUNDS ── */
+  --bg:        #F2F5F0;
+  --bg2:       #E8EEE5;
+  --bg3:       #D8E0D3;
+  /* ── TEXT ── */
+  --text:      #081008;
+  --text2:     #102018;
+  --text3:     #486848;
+  /* ── ACCENT (FOREST GREEN) ── */
+  --accent:    #1A4020;
+  --accent2:   #0A2810;
+  --alight:    #D8ECD8;
+  --alight2:   #B0D0B0;
+  /* ── GOLD ── */
+  --gold:      #C09818;
+  --gold2:     #D4AE40;
+  --gold-bg:   #F8F4DC;
+  /* ── BORDERS ── */
+  --border:    #C8D8C8;
+  --border2:   #A8B8A8;
+  /* ── CARDS & NAV ── */
+  --card:      #F8FFF5;
+  --nav-bg:    rgba(242,245,240,0.95);
+  /* ── FONTS ── */
+  --font-head: 'Fraunces', serif;
+  --font-body: 'Jost', sans-serif;
+}
+02 · TYPOGRAPHY
+HEADING FONT — FRAUNCES
+Fraunces is an optical-size variable font inspired by old-style serifs. It pairs organic warmth with high-end editorial weight. Use exclusively for all display headings, hero titles, section titles, and pull quotes.
+Import URL
+https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap
+font-family
+'Fraunces', serif
+Weights used
+300 (light) — main display weight
+Styles used
+normal + italic (italic for em highlights)
+Variable axes
+opsz (optical size): 9 to 144
+HEADING SCALE
+Where the Wild Whispers
+H1 — Hero: 88px / Fraunces 300
+Choose Your Wilderness
+H2 — Section Title: 58px / Fraunces 300
+Travel as an Art Form
+H3 — Sub-section: 42px / Fraunces 300
+Machu Picchu
+Card title: 28px / Fraunces 400
+ITALIC ACCENT STYLE (FRAUNCES ITALIC)
+Use italic Fraunces for the highlighted word in hero/section headings — the one word that carries emotion.
+Where the 
+Wild
+ Whispers
+Choose Your 
+Wilderness
+Travel as an 
+Art Form
+BODY FONT — JOST
+Jost is a geometric sans-serif with clean lines. Used for all body text, navigation, labels, buttons, captions and UI elements.
+Import URL
+https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap
+font-family
+'Jost', sans-serif
+Weights used
+300 (body), 400 (default), 500 (nav/labels), 600 (buttons/CTAs)
+line-height
+1.75 for body · 1.05 for headings
+BODY TEXT SCALE
+Role
+Size / Weight
+Color var
+Letter Spacing
+Nav links
+10.5px / 500
+--text3
+2.5px (0.16em)
+Eyebrow label
+10px / 600
+--gold
+4px (0.25em) UPPERCASE
+Hero subtitle
+14.5px / 300
+--text2
+normal
+Body copy
+14-16px / 300-400
+--text2
+normal
+Card badge
+9px / 600
+#fff
+2px UPPERCASE
+Feature label
+9px / 600
+--accent
+3px UPPERCASE
+Button text
+10px / 600
+--text
+3px UPPERCASE
+Gold CTA button
+10px / 700
+#fff
+3.5px UPPERCASE
+Footer nav
+10px / 600
+--text2
+3px UPPERCASE
+Caption / footer
+12-13px / 300
+--text3
+normal
+03 · GOOGLE FONTS IMPORT
+Place this link tag inside the <head> of your HTML file, above all stylesheets:
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&
+family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+FONT USAGE IN CSS
+/* Heading font — use on h1, h2, h3, .hero-h1, .section-title, blockquote */
+font-family: 'Fraunces', serif;
+font-weight: 300;
+/* Body font — use on everything else */
+font-family: 'Jost', sans-serif;
+/* Key CSS changes in your site */
+.hero-h1        { font-family: 'Fraunces', serif; font-weight: 300; }
+.hero-h1 em     { font-style: italic; color: var(--accent); }
+.section-h2     { font-family: 'Fraunces', serif; font-weight: 300; }
+.section-h2 em  { font-style: italic; color: var(--accent); }
+.booking-title  { font-family: 'Fraunces', serif; font-weight: 300; }
+.cal-month      { font-family: 'Fraunces', serif; }
+.dest-code      { font-family: 'Fraunces', serif; font-weight: 300; }
+.stat-num       { font-family: 'Fraunces', serif; font-weight: 300; }
+.philo-quote    { font-family: 'Fraunces', serif; font-style: italic; }
+.card-name      { font-family: 'Fraunces', serif; font-weight: 400; }
+nav, body, button { font-family: 'Jost', sans-serif; }
+04 · COMPONENT COLOURS
+NAVIGATION BAR
+Background
+#F2F5F0 at 95% opacity (rgba(242,245,240,0.95))
+Border bottom
+#C8D8C8 — 1px solid
+Logo mark border
+#C09818 (gold) — 1.5px
+Logo text
+#081008 (--text), 12px Jost 500, letter-spacing 3.5px
+Nav links
+#486848 (--text3), hover: #1A4020 (--accent)
+Sign In link
+#486848 (--text3)
+Explore button
+Border + text: #C09818, hover: fill gold bg
+HERO SECTION
+Background image
+Misty forest — brightness(0.82) saturate(0.72)
+Overlay gradient
+rgba(242,245,240,0.62) → rgba(242,245,240,0.30) → transparent
+Corner frame
+border-top + border-left: 1.5px solid #C09818, opacity 0.6
+Eyebrow tag
+#C09818 (gold), 10px Jost 600, letter-spacing 4px
+H1 main text
+#081008 (--text), Fraunces 300
+H1 italic word
+#1A4020 (--accent), Fraunces 300 italic
+Horizontal rule
+#A8B8A8 (--border2), 1px, width 44px
+Subtitle text
+#102018 (--text2), 14.5px Jost 300
+Primary CTA
+Border + text: #081008 (--text), hover fill dark
+Ghost CTA
+#102018 (--text2)
+Scroll indicator
+Track: #A8B8A8, animated line: #1A4020 (--accent)
+STATS STRIP
+Background
+#1A4020 (--accent) — full width
+Number
+Fraunces 300, 34px, #FFFFFF
+Label
+Jost 500, 9px, rgba(255,255,255,0.55), letter-spacing 2.5px
+Dividers
+1px solid rgba(255,255,255,0.12)
+EXPEDITION CARDS
+Section bg
+#F2F5F0 (--bg)
+Card badge
+bg: #1A4020 (--accent), text: #FFFFFF, 9px Jost 600
+Price badge
+bg: rgba(248,255,245,0.92), text: #1A4020 (--accent)
+Card overlay
+linear-gradient to top: rgba(10,12,26,0.62) → transparent
+Card title
+#FFFFFF, Fraunces 400, 22px
+Card location
+rgba(255,255,255,0.6), 9.5px Jost uppercase
+Filter pill active
+bg: #1A4020, text: #FFFFFF
+Filter pill default
+border: #C8D8C8, text: #486848
+BOOKING WIDGET
+Widget bg
+#F8FFF5 (--card)
+Widget border-left
+1px solid #C8D8C8
+Active tab
+text: #1A4020, border-bottom: #C09818
+Step label (gold)
+#C09818, 9px Jost 600 uppercase
+Widget title
+Fraunces 300, 30px, #081008
+Active step pill
+bg: #1A4020, text: #FFFFFF
+Calendar bg
+#E8EEE5 (--bg2)
+Calendar month
+Fraunces 400, 22px, #081008
+Selected date
+bg: #1A4020, text: #FFFFFF
+Date range
+bg: #D8ECD8, text: #1A4020
+Guest counter num
+Fraunces 300, 30px, #081008
+Book button
+bg: #C09818 (gold), text: #FFFFFF, hover: #1A4020
+Destination active
+bg: #D8ECD8, border: #B0D0B0
+Destination code
+Fraunces 300, 32px, #1A4020
+TESTIMONIALS STRIP
+Background
+#1A4020 (--accent)
+Star colour
+#D4AE40 (--gold2)
+Quote text
+rgba(255,255,255,0.88), Fraunces italic 300, 20px
+Author text
+rgba(255,255,255,0.45), Jost 500, 10px uppercase
+Dividers
+1px solid rgba(255,255,255,0.12)
+05 · SPACING & LAYOUT
+SECTION PADDING
+Section
+Padding (top/bottom)
+Side padding
+Nav
+0 (height: 66px)
+52px
+Hero content
+0 top / 90px bottom
+80px
+Stats strip
+26px
+52px
+Expeditions
+100px / 90px
+52px
+Philosophy
+96px
+52px
+Booking (left)
+80px
+64px
+Testimonials
+72px
+52px
+Footer
+56px top / 36px bottom
+52px
+GRID & GAP VALUES
+Expedition cards gap
+12px
+Expedition card 1 & 5
+height: 290px
+Expedition card 2 & 4
+height: 420px
+Expedition card 3 (hero)
+height: 470px, margin-top: -28px
+Destination grid
+grid: repeat(4,1fr), gap: 9px
+Feature grid (booking)
+grid: 1fr 1fr, gap: 24px 40px
+Testimonial grid
+grid: repeat(3,1fr), gap: 1px
+Footer grid
+grid: 1.4fr 1fr 1fr 1fr, gap: 44px
+06 · ANIMATIONS & TRANSITIONS
+HERO ENTRY ANIMATIONS (CSS @KEYFRAMES)
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Apply staggered delays */
+.hero-tag    { animation: fadeUp 0.8s 0.3s ease forwards; opacity: 0; }
+.hero-h1     { animation: fadeUp 0.9s 0.5s ease forwards; opacity: 0; }
+.hero-rule   { animation: fadeUp 0.7s 0.7s ease forwards; opacity: 0; }
+.hero-sub    { animation: fadeUp 0.8s 0.8s ease forwards; opacity: 0; }
+.hero-ctas   { animation: fadeUp 0.8s 1.0s ease forwards; opacity: 0; }
+.scroll-cue  { animation: fadeIn 1.0s 1.4s ease forwards; opacity: 0; }
+/* Scroll indicator line */
+@keyframes scrollLine {
+  from { top: -100%; }
+  to   { top:  100%; }
+}
+.scroll-line { animation: scrollLine 2s 1.6s ease-in-out infinite; }
+/* Hero image slow zoom */
+@keyframes heroZoom {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1.00); }
+}
+.hero-img { animation: heroZoom 12s ease-out forwards; }
+SCROLL REVEAL (INTERSECTIONOBSERVER)
+/* Add class="reveal" to section wrappers */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+HOVER TRANSITIONS
+Card image zoom
+transform: scale(1.07), transition: .6s cubic-bezier(0.25,.46,.45,.94)
+Card lift
+transform: translateY(-6px), transition: .35s
+Nav underline
+scaleX(0→1) on ::after, transition: .25s, transform-origin: left
+Button fill
+background fills on hover, transition: all .25s
+CTA border-line
+scaleX(0→1) on ::after, transition: .22s
+Calendar day
+background: var(--alight), transition: .12s
+Guest button
+background: #1A4020, transition: all .2s
+07 · QUICK CHANGE CHECKLIST
+Use this checklist to apply the Forest & Gold theme step by step to your existing site:
+Add the Google Fonts <link> tag to <head> in your HTML
+Replace all font-family references: swap 'Cormorant Garamond' → 'Fraunces' and keep 'Jost' as body font
+Open your CSS file and find the :root {} block — replace all existing variable values with the Forest & Gold values from Section 01
+Search for the old accent hex (#2d3a8c) → replace with #1A4020
+Search for the old accent2 (#1e2a6e) → replace with #0A2810
+Search for the old alight (#e8eafc) → replace with #D8ECD8
+Search for the old alight2 (#c8ceee) → replace with #B0D0B0
+Search for old --bg (#faf8f5) → replace with #F2F5F0
+Search for old --bg2 (#f0ede8) → replace with #E8EEE5
+Gold (#a08018) stays similar — update to #C09818 for richer tone
+Nav background rgba → update to rgba(242,245,240,0.95)
+Stats strip & testimonials strip: background #1A4020 instead of old accent
+Hero image filter: brightness(0.82) saturate(0.72) — adjust for the forest image mood
+Overlay gradient start colour: rgba(242,245,240,0.62) — matches new bg
+Check all card badges use #1A4020 background
+Book button: stays gold (#C09818), hover changes to #1A4020 (not old indigo)
+Destination card active state: background #D8ECD8, border #B0D0B0
+Calendar selected date: background #1A4020
+Footer background: #E8EEE5 (--bg2)
+Test all sections — compare nav, hero, cards, widget, footer
+Forest & Gold 
+— Ethereal Mist Theme Specification
+Prepared for Aayu · Ethereal Mist Design System v1.0
