@@ -27,7 +27,7 @@ const StoryPage = () => {
       id: "01",
       year: "2009",
       label: "CHAPTER 01",
-      title: <>A Question Asked in <span className="italic text-mint font-normal">Patagonia</span></>,
+      title: <>A Question Asked in <span className="italic text-forest font-light">Patagonia</span></>,
       description: "It began with two naturalists and a broken compass in the Aysén Region. They returned with journals full of sketches and one obsession: to share the untouched world with those who could hold it gently.",
       image: patagoniaWilderness
     },
@@ -35,7 +35,7 @@ const StoryPage = () => {
       id: "02",
       year: "2012",
       label: "CHAPTER 02",
-      title: <>Eight Guests, <span className="italic text-mint font-normal">No Agenda</span></>,
+      title: <>Eight Guests, <span className="italic text-forest font-light">No Agenda</span></>,
       description: "The inaugural expedition welcomed eight strangers to the Borneo interior. No resort. No guided tour. Only scientists, a riverboat, and forty-two days. Three guests returned the following year. Two became founding advisors.",
       image: borneoRainforest
     },
@@ -43,7 +43,7 @@ const StoryPage = () => {
       id: "03",
       year: "2018",
       label: "CHAPTER 03",
-      title: <>Carbon Neutral, <span className="italic text-mint font-normal">By Design</span></>,
+      title: <>Carbon Neutral, <span className="italic text-forest font-light">By Design</span></>,
       description: "Ethereal Mist became one of the first luxury expedition companies to achieve verified carbon neutrality — not through offsets, but through structural redesign. Every vessel, every camp, reimagined from the ground up.",
       image: icelandGlacier
     },
@@ -51,7 +51,7 @@ const StoryPage = () => {
       id: "04",
       year: "2024",
       label: "CHAPTER 04",
-      title: <>Seventeen Journeys, <span className="italic text-white font-normal">One </span><span className="italic text-mint font-normal">Ethos</span></>,
+      title: <>Seventeen Journeys, <span className="italic text-text-primary font-light">One </span><span className="italic text-forest font-light">Ethos</span></>,
       description: "Today we lead seventeen annual expeditions across six continents. The cap of eight guests has never changed. The waiting list runs three years. And somewhere in a Patagonian valley, two naturalists are still sketching in the rain.",
       image: modernLuxury,
       quote: "We measure success not in bookings, but in the silence our guests carry home."
@@ -79,17 +79,17 @@ const StoryPage = () => {
             <div className="w-12 h-[1px] bg-gold" />
             <span className="font-jost text-[10px] tracking-[0.3em] text-gold uppercase">OUR STORY</span>
           </div>
-          <h1 className="font-display text-white text-[clamp(64px,12vw,180px)] leading-[0.8] mb-12">
+          <h1 className="font-display font-light text-text-primary text-[clamp(64px,12vw,180px)] leading-[0.8] mb-12">
             Our <br />
-            <span className="italic text-mint font-normal">Ethos</span>
+            <span className="italic text-forest font-light">Ethos</span>
           </h1>
-          <p className="font-body text-white/50 text-xl max-w-xl leading-relaxed mb-16">
+          <p className="font-body text-text-secondary text-xl max-w-xl leading-relaxed mb-16">
             Founded on the principle that true luxury lies in the profound connection between the explorer and the untouched wild. This is not a travel company. This is a philosophy with a compass.
           </p>
           
           <div className="flex items-center gap-4 mt-auto">
-            <div className="w-[1px] h-12 bg-white/20" />
-            <span className="font-jost text-[9px] tracking-[0.2em] text-white/40 uppercase">SCROLL TO EXPLORE</span>
+            <div className="w-[1px] h-12 bg-border-default" />
+            <span className="font-jost text-[9px] tracking-[0.2em] text-text-muted uppercase">SCROLL TO EXPLORE</span>
           </div>
         </motion.div>
       </section>
@@ -133,16 +133,16 @@ const StoryPage = () => {
                 <img src={ch.image} alt={ch.label} className="chapter-image" />
                 <div className="chapter-badge">{ch.year}</div>
               </div>
-              <div className="flex items-end justify-between border-b border-white/10 pb-4">
+              <div className="flex items-end justify-between border-b border-border-default pb-4">
                 <div className="flex flex-col">
                   <span className="chapter-number">{ch.id}</span>
                   <span className="chapter-label">{ch.label}</span>
                 </div>
               </div>
-              <h2 className="font-display text-white text-4xl leading-snug">
+              <h2 className="font-display font-normal text-text-primary text-4xl leading-snug">
                 {ch.title}
               </h2>
-              <p className="font-body text-white/40 text-lg leading-relaxed">
+              <p className="font-body text-text-muted text-lg leading-relaxed">
                 {ch.description}
               </p>
             </motion.div>
@@ -192,21 +192,21 @@ const StoryPage = () => {
                 <img src={ch.image} alt={ch.label} className="chapter-image" />
                 <div className="chapter-badge">{ch.year}</div>
               </div>
-              <div className="flex items-end justify-between border-b border-white/10 pb-4">
+              <div className="flex items-end justify-between border-b border-border-default pb-4">
                 <div className="flex flex-col">
                   <span className="chapter-number">{ch.id}</span>
                   <span className="chapter-label">{ch.label}</span>
                 </div>
               </div>
-              <h2 className="font-display text-white text-4xl leading-snug">
+              <h2 className="font-display font-normal text-text-primary text-4xl leading-snug">
                 {ch.title}
               </h2>
-              <p className="font-body text-white/40 text-lg leading-relaxed">
+              <p className="font-body text-text-muted text-lg leading-relaxed">
                 {ch.description}
               </p>
               {ch.quote && (
-                <div className="mt-8 pl-6 border-l border-gold/40">
-                  <p className="font-body italic text-white/60 text-lg">"{ch.quote}"</p>
+                <div className="mt-8 pl-6 border-l border-gold">
+                  <p className="font-body italic text-text-secondary text-lg">"{ch.quote}"</p>
                 </div>
               )}
             </motion.div>

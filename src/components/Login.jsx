@@ -53,7 +53,7 @@ const Login = () => {
           className="w-full max-w-[480px] bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-[40px] p-12 shadow-2xl relative overflow-hidden group"
         >
           {/* Subtle Glow Effect */}
-          <div className="absolute -inset-24 bg-mint/5 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+          <div className="absolute -inset-24 bg-forest-light/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
           
           <div className="relative z-10 space-y-8">
             <div className="space-y-6">
@@ -61,7 +61,7 @@ const Login = () => {
                 <label className="block font-jost text-[11px] uppercase tracking-widest text-white/50 ml-1">Email Address</label>
                 <div className="relative group/input">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors duration-300">
-                    <Mail size={16} className="text-white/20 group-focus-within/input:text-mint" />
+                    <Mail size={16} className="text-white/20 group-focus-within/input:text-gold" />
                   </div>
                   <input 
                     type="email" 
@@ -78,7 +78,7 @@ const Login = () => {
                 </div>
                 <div className="relative group/input">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors duration-300">
-                    <Lock size={16} className="text-white/20 group-focus-within/input:text-mint" />
+                    <Lock size={16} className="text-white/20 group-focus-within/input:text-gold" />
                   </div>
                   <input 
                     type="password" 
@@ -89,7 +89,7 @@ const Login = () => {
               </div>
             </div>
 
-            <button className="w-full bg-white text-black py-4 rounded-2xl font-jost text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white/90 active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            <button className="w-full bg-gold text-white py-4 rounded-2xl font-jost text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-gold-light active:scale-[0.98] shadow-[0_0_20px_rgba(192,152,24,0.2)]">
               Sign In
             </button>
 

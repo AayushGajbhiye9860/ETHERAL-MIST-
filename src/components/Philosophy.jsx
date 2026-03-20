@@ -53,7 +53,7 @@ const Philosophy = () => {
   const [selectedDestination, setSelectedDestination] = React.useState('JP');
 
   return (
-    <section id="philosophy" className="bg-[#0A0A0B] min-h-screen flex flex-col lg:flex-row relative">
+    <section id="philosophy" className="bg-bg-alt min-h-screen flex flex-col lg:flex-row relative">
       {/* Left Content Area */}
       <div className="flex-1 py-20 px-8 md:px-[52px] lg:pr-12">
         <motion.div
@@ -70,12 +70,12 @@ const Philosophy = () => {
             </p>
           </div>
           
-          <h2 className="font-display text-white text-[clamp(44px,7vw,100px)] leading-[1] mb-12">
+          <h2 className="font-display font-light text-text-primary text-[clamp(44px,7vw,100px)] leading-[1] mb-12">
             Travel as an <br />
-            <span className="italic text-mint font-normal">Art Form</span>
+            <span className="italic text-forest font-light">Art Form</span>
           </h2>
           
-          <div className="max-w-xl space-y-6 mb-20 text-white/35 font-body text-lg leading-relaxed">
+          <div className="max-w-xl space-y-6 mb-20 text-text-secondary font-body text-lg leading-relaxed">
             <p>
               We believe the most transformative journeys are not found on itineraries — they are felt in the silent spaces between destinations.
             </p>
@@ -93,17 +93,17 @@ const Philosophy = () => {
                 onKeyDown={(e) => e.key === 'Enter' && setSelectedDestination(card.id)}
                 className={`p-6 rounded-xl border transition-all duration-700 cursor-pointer group
                   ${selectedDestination === card.id 
-                    ? 'bg-mint/10 border-mint/30 shadow-[0_0_30px_rgba(45,212,191,0.1)]' 
-                    : 'bg-[#111112] border-white/5 hover:border-white/20'}`}
+                    ? 'bg-forest-light/60 border-forest-lighter shadow-[0_0_30px_rgba(26,64,32,0.1)' 
+                    : 'bg-card border-border-default hover:border-border-emphasis'}`}
                 aria-label={`Select ${card.city} destination`}
               >
-                <h4 className={`text-2xl font-display mb-1 transition-colors ${selectedDestination === card.id ? 'text-white' : 'text-white/40'}`}>
+                <h4 className={`text-[22px] font-display mb-1 transition-colors ${selectedDestination === card.id ? 'text-forest-dark' : 'text-text-primary'}`}>
                   {card.id}
                 </h4>
-                <p className={`text-sm font-jost uppercase tracking-widest mb-4 ${selectedDestination === card.id ? 'text-mint' : 'text-white/20'}`}>
+                <p className={`text-sm font-jost uppercase tracking-widest mb-4 ${selectedDestination === card.id ? 'text-forest' : 'text-text-muted'}`}>
                   {card.city}
                 </p>
-                <p className={`text-[10px] font-jost uppercase tracking-widest ${selectedDestination === card.id ? 'text-white/60' : 'text-white/10'}`}>
+                <p className={`text-[10px] font-jost uppercase tracking-widest ${selectedDestination === card.id ? 'text-forest-dark' : 'text-forest/30'}`}>
                   From {card.price}
                 </p>
               </div>
@@ -114,14 +114,14 @@ const Philosophy = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
             {features.map((feature, index) => (
               <div key={feature.title} className="flex flex-col gap-4">
-                <div className="text-gold/60">
+                <div className="text-gold">
                   {feature.icon}
                 </div>
                 <div>
                   <h3 className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-2">
                     {feature.title}
                   </h3>
-                  <p className="font-body text-white/25 text-base leading-relaxed">
+                  <p className="font-body text-text-muted text-base leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

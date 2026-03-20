@@ -167,7 +167,7 @@ const journeys = [
 
 const JourneyCard = ({ journey, index }) => (
   <div className={`relative group h-full`}>
-    <div className="relative h-full overflow-hidden border border-white/5 bg-dark-lighter">
+    <div className="relative h-full overflow-hidden border border-border-default bg-bg">
       <motion.img
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -178,37 +178,37 @@ const JourneyCard = ({ journey, index }) => (
 
       {/* Static Label (Top Right) */}
       <div className="absolute top-4 right-4 z-20">
-        <span className="font-jost text-[9px] tracking-eyebrow text-gold border border-gold/30 bg-dark/60 backdrop-blur-md px-3 py-1.5 uppercase">
+        <span className="font-jost text-[9px] font-semibold text-white bg-forest px-3 py-1.5 uppercase tracking-[2px]">
           {journey.label}
         </span>
       </div>
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-8 translate-y-8 group-hover:translate-y-0 z-30">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0C1A]/62 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-8 translate-y-8 group-hover:translate-y-0 z-30">
         <div className="mb-2">
-          <p className="font-jost text-[10px] tracking-eyebrow text-mint uppercase">{journey.category}</p>
+          <p className="font-jost text-[10px] tracking-eyebrow text-gold-light uppercase">{journey.category}</p>
         </div>
 
-        <h3 className="font-display text-white text-3xl mb-1">{journey.title}</h3>
-        <p className="font-jost text-[9px] tracking-eyebrow text-white/50 uppercase mb-4">{journey.location}</p>
+        <h3 className="font-display text-white text-[22px] font-normal mb-1">{journey.title}</h3>
+        <p className="font-jost text-[9.5px] uppercase tracking-wider text-white/60 mb-4">{journey.location}</p>
 
-        <p className="font-body text-white/70 text-sm mb-8 line-clamp-2 max-w-[280px]">
+        <p className="font-body text-white/80 text-sm mb-8 line-clamp-2 max-w-[280px]">
           {journey.description}
         </p>
 
-        <div className="flex justify-between items-end border-t border-white/10 pt-6">
+        <div className="flex justify-between items-end border-t border-white/20 pt-6">
           <div className="flex flex-col">
-            <span className="font-jost text-[9px] tracking-eyebrow text-white/40 uppercase">starting from</span>
-            <span className="font-body text-gold text-2xl">${journey.price}</span>
+            <span className="font-jost text-[9px] tracking-eyebrow text-white/60 uppercase">starting from</span>
+            <span className="font-display text-text-primary bg-bg/90 px-3 py-1 mt-1 font-medium text-lg">${journey.price}</span>
           </div>
 
           <Link
             to="/booking"
-            className="group/btn relative px-6 py-3 overflow-hidden border border-gold/50 flex items-center gap-3 hover:bg-gold transition-all duration-500"
+            className="group/btn relative px-6 py-3 overflow-hidden border border-white/40 flex items-center gap-3 hover:bg-forest hover:border-forest transition-all duration-500"
             aria-label={`Book ${journey.title} expedition`}
           >
-            <span className="font-jost text-[10px] tracking-btn text-white group-hover/btn:text-dark uppercase relative z-10">Inquire</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold group-hover/btn:text-dark transition-colors relative z-10">
+            <span className="font-jost text-[10px] tracking-btn text-white uppercase relative z-10">Inquire</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white relative z-10">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" />
             </svg>
           </Link>
@@ -235,17 +235,17 @@ const Journeys = ({ layout = "scroll" }) => {
   const scrollJourneys = [...journeys, ...journeys];
 
   return (
-    <section id="journeys" className="bg-dark py-32 overflow-hidden">
+    <section id="journeys" className="bg-bg py-32 overflow-hidden">
       <div className="flex flex-col md:flex-row justify-between items-baseline mb-20 px-8 md:px-[52px]">
         <div>
-          <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-6">
+          <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-6 font-semibold">
             FEATURED EXPEDITIONS
           </p>
-          <h2 className="font-display text-white text-[clamp(40px,5.5vw,64px)] leading-[1.1]">
-            Choose Your <span className="italic text-mint font-normal">Wilderness</span>
+          <h2 className="font-display font-light text-text-primary text-[clamp(40px,5.5vw,64px)] leading-[1.1]">
+            Choose Your <span className="italic text-forest font-light">Wilderness</span>
           </h2>
         </div>
-        <Link to="/journeys" className="font-jost text-[10px] tracking-btn text-white/45 uppercase hover:text-gold transition-colors mt-8 md:mt-0 flex items-center gap-2" aria-label="View all luxury journeys">
+        <Link to="/journeys" className="font-jost text-[10px] tracking-btn text-text-muted uppercase hover:text-forest transition-colors mt-8 md:mt-0 flex items-center gap-2" aria-label="View all luxury journeys">
           VIEW ALL JOURNEYS <span>&rarr;</span>
         </Link>
       </div>
@@ -271,8 +271,8 @@ const Journeys = ({ layout = "scroll" }) => {
         </motion.div>
 
         {/* Gradient overlays for smooth fading effect at edges */}
-        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );

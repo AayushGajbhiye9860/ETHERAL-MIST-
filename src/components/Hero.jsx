@@ -20,12 +20,12 @@ const Hero = () => {
           backgroundImage: 'url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800")',
           backgroundSize: 'cover',
           backgroundPosition: 'center 30%',
+          filter: 'brightness(0.6) saturate(0.95)'
         }}
       />
 
-      {/* Overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080E14]/30 to-[#080E14]/72" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#080E14]/55 to-transparent w-full md:w-[75%]" />
+      {/* Overlays - Removed the excessive white gradient */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-transparent opacity-50" />
 
       {/* Decorative Brackets */}
       <motion.div
@@ -55,39 +55,39 @@ const Hero = () => {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
-          className="font-display text-white text-[clamp(52px,7.2vw,90px)] leading-[0.95] mb-6"
+          className="font-display text-white text-[clamp(52px,7.2vw,90px)] leading-[0.95] mb-6 font-light"
         >
           Where the <br /> 
-          <span className="italic text-mint font-normal">Wild</span> Whispers
+          <span className="italic text-gold-light font-light">Wild</span> Whispers
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.9 }}
-          className="font-body text-white/72 text-lg md:text-xl max-w-[420px] mb-10 leading-relaxed"
+          className="font-body text-white/80 text-lg md:text-xl max-w-[420px] mb-10 leading-relaxed font-light"
         >
           Venture beyond the ordinary into earth's most pristine, untouched landscapes. Curated journeys for the discerning explorer.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
-          className="flex flex-col sm:flex-row items-center gap-9"
-        >
-          <Link to="/booking" className="btn-gold group flex items-center justify-center" aria-label="Start your booking process">
-            <span className="relative z-10">Begin Your Journey</span>
-          </Link>
-          <Link 
-            to="/story" 
-            className="font-jost text-white/50 text-[11px] tracking-btn uppercase hover:text-white transition-colors relative group py-2"
-            aria-label="Read our story"
-          >
-            Our Story
-            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white/20 transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-        </motion.div>
+           initial={{ opacity: 0, y: 14 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
+           className="flex flex-col sm:flex-row items-center gap-9"
+         >
+           <Link to="/booking" className="btn-gold group flex items-center justify-center bg-transparent border-white/50 text-white hover:border-white hover:text-text-primary" aria-label="Start your booking process">
+             <span className="relative z-10">Begin Your Journey</span>
+           </Link>
+           <Link 
+             to="/story" 
+             className="font-jost text-white/70 text-[11px] tracking-btn uppercase hover:text-white transition-colors relative group py-2"
+             aria-label="Read our story"
+           >
+             Our Story
+             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white/50 transition-all duration-300 group-hover:w-full"></span>
+           </Link>
+         </motion.div>
       </div>
 
       {/* Scroll Indicator */}
@@ -98,10 +98,10 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer group"
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <span className="font-jost text-[9px] tracking-[0.3em] text-white/30 uppercase mb-4 transition-colors duration-500 group-hover:text-gold" aria-hidden="true">
+        <span className="font-jost text-[9px] tracking-[0.3em] text-white/50 uppercase mb-4 transition-colors duration-500 group-hover:text-white" aria-hidden="true">
           Scroll
         </span>
-        <div className="w-[18px] h-[32px] border border-white/20 rounded-full flex justify-center p-1.5 transition-colors duration-500 group-hover:border-gold/50">
+        <div className="w-[18px] h-[32px] border border-white/30 rounded-full flex justify-center p-1.5 transition-colors duration-500 group-hover:border-white/80">
           <motion.div
             animate={{ 
               y: [0, 12, 0],
@@ -112,7 +112,7 @@ const Hero = () => {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="w-[1.5px] h-[6px] bg-gold rounded-full"
+            className="w-[1.5px] h-[6px] bg-forest rounded-full"
           />
         </div>
       </motion.div>

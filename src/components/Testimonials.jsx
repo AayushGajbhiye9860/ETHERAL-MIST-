@@ -73,7 +73,7 @@ const Testimonials = () => {
   const scrollTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section className="bg-dark py-32 overflow-hidden">
+    <section className="bg-forest py-32 overflow-hidden">
       <div className="text-center mb-20 px-8 md:px-[52px]">
         <motion.p
            initial={{ opacity: 0, y: 10 }}
@@ -88,9 +88,9 @@ const Testimonials = () => {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.1 }}
-           className="font-display text-white text-[clamp(40px,5.5vw,64px)] leading-[1.1]"
+           className="font-display font-light text-white text-[clamp(40px,5.5vw,64px)] leading-[1.1]"
         >
-          Words from the <span className="italic text-mint font-normal">Wild</span>
+          Words from the <span className="italic text-gold font-light">Wild</span>
         </motion.h2>
       </div>
 
@@ -110,7 +110,7 @@ const Testimonials = () => {
           {scrollTestimonials.map((testimonial, index) => (
             <div
               key={`${testimonial.id}-${index}`}
-              className="bg-[#0D1219] p-12 border border-white/5 flex flex-col justify-between w-[450px] shrink-0"
+              className="bg-forest-dark p-12 py-10 border border-white/10 flex flex-col justify-between w-[450px] shrink-0"
             >
               <div>
                 <div className="text-gold mb-8">
@@ -118,22 +118,22 @@ const Testimonials = () => {
                     <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-2.2 1.8-4 4-4V8zM24 8c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8z" />
                   </svg>
                 </div>
-                <p className="font-body text-white/55 text-xl leading-relaxed italic mb-12">
+                <p className="font-display font-light text-white/90 text-[20px] leading-relaxed italic mb-12">
                   "{testimonial.quote}"
                 </p>
               </div>
 
-              <div className="flex justify-between items-center border-t border-white/5 pt-8">
+              <div className="flex justify-between items-center border-t border-white/10 pt-8">
                 <div className="flex items-center gap-4">
                   <img src={testimonial.avatar} alt={testimonial.author} className="w-10 h-10 rounded-full object-cover grayscale opacity-50" />
                   <div>
-                    <h4 className="font-jost text-[11px] tracking-eyebrow text-white uppercase">{testimonial.author}</h4>
-                    <p className="font-body text-[13px] text-white/30">{testimonial.location}</p>
+                    <h4 className="font-jost text-[10px] tracking-eyebrow text-white/45 uppercase">{testimonial.author}</h4>
+                    <p className="font-jost text-[9px] uppercase tracking-wider text-white/30">{testimonial.location}</p>
                   </div>
                 </div>
                 <div className="flex gap-0.5">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-gold">
+                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-gold-light">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   ))}
@@ -144,8 +144,8 @@ const Testimonials = () => {
         </motion.div>
         
         {/* Gradient overlays for smooth fading effect at edges */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-dark to-transparent z-10" />
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-dark to-transparent z-10" />
+        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-forest to-transparent z-10" />
+        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-forest to-transparent z-10" />
       </div>
     </section>
   );

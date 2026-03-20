@@ -25,7 +25,7 @@ const JourneysPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-32 pb-32 min-h-screen bg-dark"
+      className="pt-32 pb-32 min-h-screen bg-bg"
     >
       {/* Header Section */}
       <div className="px-8 md:px-[52px] mb-20">
@@ -42,15 +42,15 @@ const JourneysPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="font-display text-white text-[clamp(56px,10vw,140px)] leading-[0.85] mb-10"
+            className="font-display font-light text-text-primary text-[clamp(56px,10vw,140px)] leading-[0.85] mb-10"
           >
-            Our <span className="italic text-mint font-normal">Expeditions</span>
+            Our <span className="italic text-forest font-light">Expeditions</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="font-body text-white/50 text-lg md:text-xl max-w-2xl leading-relaxed"
+            className="font-body text-text-muted text-lg md:text-xl max-w-2xl leading-relaxed"
           >
             Traverse the globe's most secluded corners. Each journey is a meticulously crafted masterpiece of exploration and luxury, designed for those who seek the extraordinary.
           </motion.p>
@@ -59,20 +59,20 @@ const JourneysPage = () => {
 
       {/* Category Tabs */}
       <div className="px-8 md:px-[52px] mb-16 overflow-x-auto no-scrollbar">
-        <div className="flex gap-8 border-b border-white/5 pb-6 min-w-max">
+        <div className="flex gap-8 border-b border-border-default pb-6 min-w-max">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`font-jost text-[11px] tracking-btn uppercase transition-all duration-500 relative pb-6 ${
-                activeCategory === cat ? "text-white" : "text-white/30 hover:text-white/60"
+                activeCategory === cat ? "text-text-primary" : "text-text-muted hover:text-text-primary"
               }`}
             >
               {cat}
               {activeCategory === cat && (
                 <motion.div 
                   layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-mint"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-forest"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -122,7 +122,7 @@ const JourneysPage = () => {
 
       {/* CTA Section */}
       <div className="px-8 md:px-[52px] mt-32">
-        <div className="relative overflow-hidden bg-mint h-[400px] flex flex-col items-center justify-center text-center p-8 group">
+        <div className="relative overflow-hidden bg-forest h-[400px] flex flex-col items-center justify-center text-center p-8 group">
           <motion.div 
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 1.5 }}
@@ -130,13 +130,13 @@ const JourneysPage = () => {
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1800")' }}
           />
           <div className="relative z-10">
-            <h2 className="font-display text-white text-[clamp(40px,6vw,80px)] leading-[0.9] mb-8">
-              Begin Your <span className="italic text-gold font-normal">Story</span>
+            <h2 className="font-display font-light text-white text-[clamp(40px,6vw,80px)] leading-[0.9] mb-8">
+              Begin Your <span className="italic text-gold font-light">Story</span>
             </h2>
             <p className="font-body text-white/80 text-lg mb-12 max-w-md mx-auto">
               Every expedition is private, bespoke, and entirely yours.
             </p>
-            <button className="px-12 py-5 border border-white text-white font-jost text-[12px] tracking-btn uppercase hover:bg-white hover:text-dark transition-all duration-500">
+            <button className="px-12 py-5 border border-white text-white font-jost text-[12px] tracking-btn uppercase hover:bg-white hover:text-forest transition-all duration-500">
               Plan My Journey
             </button>
           </div>
