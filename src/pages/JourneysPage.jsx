@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { journeys, JourneyCard } from '../components/Journeys';
 import { motion, AnimatePresence } from 'framer-motion';
+import SplitText from '../components/SplitText/SplitText';
 
 const categories = ["ALL", "WILDLIFE", "CULTURE", "POLAR", "JUNGLE", "DESERT"];
 
@@ -38,14 +39,14 @@ const JourneysPage = () => {
           >
             Curated since 1987
           </motion.p>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+          <SplitText
+            text="Our Expeditions"
             className="font-display font-light text-text-primary text-[clamp(56px,10vw,140px)] leading-[0.85] mb-10"
-          >
-            Our <span className="italic text-forest font-light">Expeditions</span>
-          </motion.h1>
+            delay={35}
+            duration={0.9}
+            textAlign="left"
+            tag="h1"
+          />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,9 +131,14 @@ const JourneysPage = () => {
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1800")' }}
           />
           <div className="relative z-10">
-            <h2 className="font-display font-light text-white text-[clamp(40px,6vw,80px)] leading-[0.9] mb-8">
-              Begin Your <span className="italic text-gold font-light">Story</span>
-            </h2>
+            <SplitText
+              text="Begin Your Story"
+              className="font-display font-light text-white text-[clamp(40px,6vw,80px)] leading-[0.9] mb-8"
+              delay={35}
+              duration={0.8}
+              textAlign="center"
+              tag="h2"
+            />
             <p className="font-body text-white/80 text-lg mb-12 max-w-md mx-auto">
               Every expedition is private, bespoke, and entirely yours.
             </p>

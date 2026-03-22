@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import '../styles/StoryStyles.css';
+import SplitText from '../components/SplitText/SplitText';
 
 // Assets
 import patagoniaWilderness from '../assets/story/patagonia_wilderness.png';
@@ -79,10 +80,14 @@ const StoryPage = () => {
             <div className="w-12 h-[1px] bg-gold" />
             <span className="font-jost text-[10px] tracking-[0.3em] text-gold uppercase">OUR STORY</span>
           </div>
-          <h1 className="font-display font-light text-text-primary text-[clamp(64px,12vw,180px)] leading-[0.8] mb-12">
-            Our <br />
-            <span className="italic text-forest font-light">Ethos</span>
-          </h1>
+          <SplitText
+            text="Our Ethos"
+            className="font-display font-light text-text-primary text-[clamp(64px,12vw,180px)] leading-[0.8] mb-12"
+            delay={35}
+            duration={0.9}
+            textAlign="left"
+            tag="h1"
+          />
           <p className="font-body text-text-secondary text-xl max-w-xl leading-relaxed mb-16">
             Founded on the principle that true luxury lies in the profound connection between the explorer and the untouched wild. This is not a travel company. This is a philosophy with a compass.
           </p>
@@ -139,9 +144,17 @@ const StoryPage = () => {
                   <span className="chapter-label">{ch.label}</span>
                 </div>
               </div>
-              <h2 className="font-display font-normal text-text-primary text-4xl leading-snug">
-                {ch.title}
-              </h2>
+              <SplitText
+                text={ch.id === "01" ? "A Question Asked in Patagonia" : 
+                      ch.id === "02" ? "Eight Guests, No Agenda" :
+                      ch.id === "03" ? "Carbon Neutral, By Design" :
+                      "Seventeen Journeys, One Ethos"} 
+                className="font-display font-normal text-text-primary text-4xl leading-snug mt-6 mb-4"
+                delay={25}
+                duration={0.7}
+                textAlign="left"
+                tag="h2"
+              />
               <p className="font-body text-text-muted text-lg leading-relaxed">
                 {ch.description}
               </p>
@@ -198,9 +211,17 @@ const StoryPage = () => {
                   <span className="chapter-label">{ch.label}</span>
                 </div>
               </div>
-              <h2 className="font-display font-normal text-text-primary text-4xl leading-snug">
-                {ch.title}
-              </h2>
+              <SplitText
+                text={ch.id === "01" ? "A Question Asked in Patagonia" : 
+                      ch.id === "02" ? "Eight Guests, No Agenda" :
+                      ch.id === "03" ? "Carbon Neutral, By Design" :
+                      "Seventeen Journeys, One Ethos"} 
+                className="font-display font-normal text-text-primary text-4xl leading-snug mt-6 mb-4"
+                delay={25}
+                duration={0.7}
+                textAlign="left"
+                tag="h2"
+              />
               <p className="font-body text-text-muted text-lg leading-relaxed">
                 {ch.description}
               </p>

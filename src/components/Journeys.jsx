@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SplitText from './SplitText/SplitText';
 
 // Import local premium assets
 import serengetiImg from '../assets/journeys/serengeti.png';
@@ -241,9 +242,14 @@ const Journeys = ({ layout = "scroll" }) => {
           <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-6 font-semibold">
             FEATURED EXPEDITIONS
           </p>
-          <h2 className="font-display font-light text-text-primary text-[clamp(40px,5.5vw,64px)] leading-[1.1]">
-            Choose Your <span className="italic text-forest font-light">Wilderness</span>
-          </h2>
+          <SplitText
+            text="Choose Your Wilderness"
+            className="font-display font-light text-text-primary text-[clamp(40px,5.5vw,64px)] leading-[1.1]"
+            delay={35}
+            duration={0.8}
+            textAlign="left"
+            tag="h2"
+          />
         </div>
         <Link to="/journeys" className="font-jost text-[10px] tracking-btn text-text-muted uppercase hover:text-forest transition-colors mt-8 md:mt-0 flex items-center gap-2" aria-label="View all luxury journeys">
           VIEW ALL JOURNEYS <span>&rarr;</span>

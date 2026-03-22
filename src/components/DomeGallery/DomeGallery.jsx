@@ -1,40 +1,12 @@
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
-import atacama from './assets/atacama.png';
-import bhutan from './assets/bhutan.png';
-import borneo_dest from './assets/borneo_dest.png';
-import borneo_rainforest from './assets/borneo_rainforest.png';
-import galapagos from './assets/galapagos.png';
-import greenland from './assets/greenland.png';
-import iceland_glacier from './assets/iceland_glacier.png';
-import kyoto from './assets/kyoto.png';
-import machu_picchu from './assets/machu_picchu.png';
-import mekong from './assets/mekong.png';
-import modern_luxury_expedition from './assets/modern_luxury_expedition.png';
-import patagonia_edge_dest from './assets/patagonia_edge_dest.png';
-import patagonia_wilderness from './assets/patagonia_wilderness.png';
-import serengeti from './assets/serengeti.png';
-import snow_leopard from './assets/snow_leopard.png';
 
 import './DomeGallery.css';
 
-const DEFAULT_IMAGES = [
-  { src: atacama, alt: 'Atacama Desert' },
-  { src: bhutan, alt: 'Bhutanese Kingdom' },
-  { src: borneo_dest, alt: 'Borneo Destination' },
-  { src: borneo_rainforest, alt: 'Borneo Rainforest' },
-  { src: galapagos, alt: 'Galapagos Islands' },
-  { src: greenland, alt: 'Greenland Ice' },
-  { src: iceland_glacier, alt: 'Icelandic Glaciers' },
-  { src: kyoto, alt: 'Kyoto Temple' },
-  { src: machu_picchu, alt: 'Incan Citadel' },
-  { src: mekong, alt: 'Mekong River' },
-  { src: modern_luxury_expedition, alt: 'Luxury Expedition' },
-  { src: patagonia_edge_dest, alt: 'Patagonian Shores' },
-  { src: patagonia_wilderness, alt: 'Patagonian Mountains' },
-  { src: serengeti, alt: 'Serengeti Wildlife' },
-  { src: snow_leopard, alt: 'Snow Leopard Habitat' }
-];
+const DEFAULT_IMAGES = Array.from({ length: 50 }, (_, i) => ({
+  src: `https://loremflickr.com/800/600/nature?lock=${i + 1}`,
+  alt: `Nature Image ${i + 1}`
+}));
 
 const DEFAULTS = {
   maxVerticalRotationDeg: 5,
@@ -122,7 +94,7 @@ function computeItemBaseRotation(offsetX, offsetY, sizeX, sizeY, segments) {
 
 export default function DomeGallery({
   images = DEFAULT_IMAGES,
-  fit = 0.5,
+  fit = 0.65,
   fitBasis = 'auto',
   minRadius = 600,
   maxRadius = Infinity,
@@ -135,7 +107,7 @@ export default function DomeGallery({
   dragDampening = 2,
   openedImageWidth = '250px',
   openedImageHeight = '350px',
-  imageBorderRadius = '30px',
+  imageBorderRadius = '12px',
   openedImageBorderRadius = '30px',
   grayscale = true,
   autoRotate = true,

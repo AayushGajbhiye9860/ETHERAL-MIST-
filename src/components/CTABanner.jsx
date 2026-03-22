@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SplitText from './SplitText/SplitText';
 
 const CTABanner = () => {
   const MotionLink = motion(Link);
@@ -11,14 +12,20 @@ const CTABanner = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-col items-center justify-center max-w-4xl mx-auto"
       >
         <p className="font-jost text-[12px] tracking-eyebrow text-gold uppercase mb-6">
           Ready?
         </p>
         
-        <h2 className="font-display font-light text-white text-[clamp(40px,8vw,80px)] leading-[1.1] mb-12">
-          Let's Get <span className="italic text-gold font-light">Lost</span>
-        </h2>
+        <SplitText
+          text="Let's Get Lost"
+          className="font-display font-light text-white text-[clamp(40px,8vw,80px)] leading-[1.1] mb-12"
+          delay={40}
+          duration={0.9}
+          textAlign="center"
+          tag="h2"
+        />
         
         <MotionLink
           to="/booking"

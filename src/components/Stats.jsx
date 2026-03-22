@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SplitText from './SplitText/SplitText';
 
 const stats = [
   { 
@@ -50,15 +51,22 @@ const Stats = () => {
               <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl -z-10" />
               
               <div className="mb-4 transition-transform duration-500 group-hover:-translate-y-2">
-                <span className="font-display font-light text-white text-[clamp(64px,5vw,84px)] leading-none drop-shadow-2xl">
-                  {stat.number}
-                </span>
+                <SplitText
+                  text={stat.number}
+                  className="font-display font-light text-white text-[clamp(64px,5vw,84px)] leading-none drop-shadow-2xl"
+                  delay={40}
+                  duration={0.8}
+                  ease="power2.out"
+                />
               </div>
               
               <div className="flex flex-col items-center space-y-4">
-                <p className="font-jost text-[11px] tracking-[0.2em] text-white/55 uppercase transition-colors duration-500 group-hover:text-gold">
-                  {stat.label}
-                </p>
+                <SplitText
+                  text={stat.label}
+                  className="font-jost text-[11px] tracking-[0.2em] text-white/55 uppercase transition-colors duration-500 group-hover:text-gold"
+                  delay={25}
+                  duration={0.7}
+                />
                 
                 {/* Hidden details revealed on hover */}
                 <motion.div

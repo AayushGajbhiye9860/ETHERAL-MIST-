@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BookingSidebar from './BookingSidebar';
+import SplitText from './SplitText/SplitText';
 
 const journeyCards = [
   { id: 'JP', city: 'Tokyo', price: '₹82,000', active: true },
@@ -70,10 +71,14 @@ const Philosophy = () => {
             </p>
           </div>
           
-          <h2 className="font-display font-light text-text-primary text-[clamp(44px,7vw,100px)] leading-[1] mb-12">
-            Travel as an <br />
-            <span className="italic text-forest font-light">Art Form</span>
-          </h2>
+          <SplitText
+            text="Travel as an Art Form"
+            className="font-display font-light text-text-primary text-[clamp(44px,7vw,100px)] leading-[1] mb-12"
+            delay={40}
+            duration={0.9}
+            textAlign="left"
+            tag="h2"
+          />
           
           <div className="max-w-xl space-y-6 mb-20 text-text-secondary font-body text-lg leading-relaxed">
             <p>

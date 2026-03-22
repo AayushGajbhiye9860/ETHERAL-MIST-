@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import SplitText from '../components/SplitText/SplitText';
 
 const ContactPage = () => {
   useEffect(() => {
@@ -18,10 +19,14 @@ const ContactPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
             <p className="font-jost text-[10px] tracking-eyebrow text-gold uppercase mb-6">Inquiries</p>
-            <h1 className="font-display font-light text-text-primary text-[clamp(48px,6vw,90px)] leading-[0.95] mb-8">
-              Begin the <br />
-              <span className="italic text-forest font-light">Conversation</span>
-            </h1>
+            <SplitText
+              text="Begin the Conversation"
+              className="font-display font-light text-text-primary text-[clamp(48px,6vw,90px)] leading-[0.95] mb-8"
+              delay={35}
+              duration={0.9}
+              textAlign="left"
+              tag="h1"
+            />
             <p className="font-body text-text-muted text-xl max-w-md leading-relaxed mb-16">
               Whether you're planning a private expedition or a corporate retreat, our concierges are ready to assist.
             </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SplitText from './SplitText/SplitText';
 
 const testimonials = [
   {
@@ -83,15 +84,14 @@ const Testimonials = () => {
         >
           EXPLORER VOICES
         </motion.p>
-        <motion.h2
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ delay: 0.1 }}
-           className="font-display font-light text-white text-[clamp(40px,5.5vw,64px)] leading-[1.1]"
-        >
-          Words from the <span className="italic text-gold font-light">Wild</span>
-        </motion.h2>
+        <SplitText
+          text="Words from the Wild"
+          className="font-display font-light text-white text-[clamp(40px,5.5vw,64px)] leading-[1.1]"
+          delay={35}
+          duration={0.8}
+          textAlign="center"
+          tag="h2"
+        />
       </div>
 
       <div className="relative">

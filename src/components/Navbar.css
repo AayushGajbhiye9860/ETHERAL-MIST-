@@ -1,0 +1,208 @@
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+}
+
+.navbar {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 64px);
+  max-width: 1280px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 58px;
+  border-radius: 14px;
+  border: 1px solid rgba(201,168,76,0.0);
+  background: transparent;
+  transition:
+    background 0.45s ease,
+    border-color 0.45s ease,
+    backdrop-filter 0.45s ease,
+    box-shadow 0.45s ease,
+    top 0.35s ease;
+  animation: navDrop 0.9s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+}
+
+@keyframes navDrop {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.navbar.scrolled {
+  background: rgba(255, 252, 245, 0.20);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-color: rgba(201,168,76,0.15);
+  box-shadow:
+    0 2px 32px rgba(0,0,0,0.08),
+    inset 0 0 0 0.5px rgba(201,168,76,0.12);
+  top: 12px;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav__icon {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.nav__icon:hover {
+  background: rgba(201,168,76,0.1);
+}
+
+.nav__icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #111;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.navbar.is-login-page .nav__icon svg {
+  stroke: var(--gold);
+}
+
+.nav__brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #111;
+  white-space: nowrap;
+}
+
+.navbar.is-login-page .nav__brand-name {
+  color: #ffffff;
+}
+
+.navbar.scrolled .nav__brand-name {
+  color: #111;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #222;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.navbar.is-login-page .nav__links a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav__links a:hover, .nav__links a.active {
+  background: rgba(201,168,76,0.15);
+  color: #8a6a1f;
+}
+
+.navbar.is-login-page .nav__links a:hover, 
+.navbar.is-login-page .nav__links a.active {
+  color: var(--gold);
+}
+
+.navbar.scrolled .nav__links a {
+  color: #222;
+}
+
+.navbar.scrolled .nav__links a:hover, 
+.navbar.scrolled .nav__links a.active {
+  background: rgba(201,168,76,0.1);
+  color: #8a6a1f;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav__signin {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #333;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar.is-login-page .nav__signin {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav__signin:hover {
+  color: #111;
+  background: rgba(0,0,0,0.04);
+}
+
+.navbar.is-login-page .nav__signin:hover {
+  color: var(--gold);
+  background: rgba(255,255,255,0.05);
+}
+
+.navbar.scrolled .nav__signin {
+  color: #333;
+}
+
+.navbar.scrolled .nav__signin:hover {
+  color: #111;
+  background: rgba(0,0,0,0.04);
+}
+
+.nav__cta {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 9px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+.nav__cta:hover {
+  background: var(--gold);
+  color: #fff;
+}
